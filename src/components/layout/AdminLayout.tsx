@@ -16,8 +16,9 @@ import {
   Menu, 
   X,
   Database,
-  ShieldCheck,
-  AlertTriangle
+  Users,
+  AlertTriangle,
+  ShieldCheck
 } from 'lucide-react';
 
 export const AdminLayout: React.FC = () => {
@@ -38,6 +39,7 @@ export const AdminLayout: React.FC = () => {
     { name: 'Current Needs', path: '/admin/problems', icon: HelpCircle },
     { name: 'Student Statistics', path: '/admin/statistics', icon: BarChart3 },
     { name: 'Student Activities', path: '/admin/activities', icon: Award },
+    { name: 'Leadership & Staff', path: '/admin/staff', icon: Users },
     { name: 'Legal Documents', path: '/admin/documents', icon: FileText },
     { name: 'Donation & QR Settings', path: '/admin/donation', icon: QrCode },
   ];

@@ -13,7 +13,8 @@ import {
   CheckCircle2,
   Database,
   ArrowRight,
-  Award
+  Award,
+  Users
 } from 'lucide-react';
 
 export const AdminDashboard: React.FC = () => {
@@ -27,6 +28,7 @@ export const AdminDashboard: React.FC = () => {
     publishedActivities: number;
     totalDocuments: number;
     publishedDocuments: number;
+    totalStaff?: number;
     isSupabaseLive: boolean;
   } | null>(null);
 
@@ -277,6 +279,22 @@ export const AdminDashboard: React.FC = () => {
               </h3>
               <p className="text-xs text-stone-500 leading-relaxed">
                 Reorder homepage sections, toggle visibility, and update introductory video and hero headlines.
+              </p>
+            </div>
+          </Link>
+          <Link
+            to="/admin/staff"
+            className="p-6 bg-white rounded-3xl border border-stone-200/80 shadow-2xs hover:shadow-md transition-shadow flex items-start gap-4 group"
+          >
+            <span className="p-3 bg-stone-100 group-hover:bg-emerald-800 group-hover:text-amber-400 rounded-2xl text-stone-700 transition-colors">
+              <Users className="w-6 h-6" />
+            </span>
+            <div className="space-y-1">
+              <h3 className="font-bold text-sm text-stone-900 group-hover:text-emerald-800 transition-colors">
+                Leadership & Teaching Staff
+              </h3>
+              <p className="text-xs text-stone-500 leading-relaxed">
+                Manage Hazrat Qari Suleman Saheb, Nazim-e-Taleemat, Sarparast, Asatizah, and support personnel.
               </p>
             </div>
           </Link>

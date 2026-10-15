@@ -14,8 +14,10 @@ import {
   Eye, 
   EyeOff, 
   HelpCircle,
-  FileText
+  FileText,
+  Video
 } from 'lucide-react';
+import { VideoEmbed } from '../../components/common/VideoEmbed';
 
 export const AdminProblems: React.FC = () => {
   const [problems, setProblems] = useState<Problem[]>([]);
@@ -200,7 +202,15 @@ export const AdminProblems: React.FC = () => {
                         )}
                       </div>
                       <div>
-                        <span>{prob.title_en}</span>
+                        <div className="flex items-center gap-2">
+                          <span>{prob.title_en}</span>
+                          {prob.video_url && (
+                            <span className="px-1.5 py-0.5 bg-red-100 text-red-700 rounded text-[10px] font-bold flex items-center gap-1 shadow-2xs" title="Video appeal configured">
+                              <Video className="w-3 h-3 text-red-600" />
+                              <span>Video</span>
+                            </span>
+                          )}
+                        </div>
                         <span className="block text-[11px] text-stone-400 font-mono font-normal">slug: {prob.slug}</span>
                       </div>
                     </td>
@@ -326,10 +336,46 @@ export const AdminProblems: React.FC = () => {
                   <label className="block text-xs font-bold text-stone-700 uppercase mb-1">Image URL (Google Drive / Web link)</label>
                   <input
                     type="url"
+                    placeholder="https://drive.google.com/file/d/... or direct image link"
                     value={editingProblem.image_url || ''}
                     onChange={(e) => setEditingProblem({ ...editingProblem, image_url: e.target.value })}
                     className="w-full px-3 py-2 bg-stone-50 rounded-xl border border-stone-300 text-xs font-mono focus:bg-white"
                   />
+                  <p className="text-[11px] text-stone-500 mt-1">
+                    Supports Google Drive share links, direct image URLs, and Supabase storage images.
+                  </p>
+                </div>
+
+                <div className="md:col-span-2">
+                  <label className="block text-xs font-bold text-stone-700 uppercase mb-1 flex items-center justify-between">
+                    <span className="flex items-center gap-1.5">
+                      <Video className="w-3.5 h-3.5 text-emerald-800" />
+                      <span>Video URL (Google Drive preview link or YouTube)</span>
+                    </span>
+                    <span className="text-[10px] text-stone-500 font-normal">Optional</span>
+                  </label>
+                  <input
+                    type="url"
+                    placeholder="https://drive.google.com/file/d/... or https://www.youtube.com/watch?v=..."
+                    value={editingProblem.video_url || ''}
+                    onChange={(e) => setEditingProblem({ ...editingProblem, video_url: e.target.value })}
+                    className="w-full px-3 py-2 bg-stone-50 rounded-xl border border-stone-300 text-xs font-mono focus:bg-white"
+                  />
+                  <p className="text-[11px] text-stone-500 mt-1">
+                    Paste your <strong>Google Drive video link</strong> (make sure file sharing is set to <em>"Anyone with the link can view"</em>) or a YouTube video link.
+                  </p>
+
+                  {editingProblem.video_url && (
+                    <div className="mt-3 p-3.5 bg-stone-100 rounded-2xl border border-stone-200 space-y-2">
+                      <span className="text-xs font-bold text-stone-800 flex items-center gap-1.5">
+                        <Video className="w-3.5 h-3.5 text-red-600" />
+                        <span>Live Video Embed Preview</span>
+                      </span>
+                      <div className="max-w-md rounded-xl overflow-hidden shadow-sm">
+                        <VideoEmbed url={editingProblem.video_url} title={editingProblem.title_en || 'Appeal Video'} />
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 <div className="md:col-span-2">

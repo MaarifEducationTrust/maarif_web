@@ -172,3 +172,16 @@ export interface AdminProfile {
   full_name: string;
   created_at?: string;
 }
+
+export interface StaffMember {
+  id: string;
+  name_en: string;
+  name_ur: string;
+  role_en: string;
+  role_ur: string;
+  category: 'leadership' | 'teaching' | 'support';
+  display_order: number;
+  is_published: boolean;
+  created_at?: string;
+  updated_at?: string;
+}

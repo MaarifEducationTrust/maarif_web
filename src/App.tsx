@@ -31,6 +31,7 @@ import { AdminStatistics } from './pages/admin/AdminStatistics';
 import { AdminActivities } from './pages/admin/AdminActivities';
 import { AdminDocuments } from './pages/admin/AdminDocuments';
 import { AdminDonation } from './pages/admin/AdminDonation';
+import { AdminStaff } from './pages/admin/AdminStaff';
 
 // Layout wrapper for Public Pages
 const PublicLayout: React.FC<{
@@ -113,6 +114,7 @@ export const App: React.FC = () => {
                 <Route path="problems" element={<AdminProblems />} />
                 <Route path="statistics" element={<AdminStatistics />} />
                 <Route path="activities" element={<AdminActivities />} />
+                <Route path="staff" element={<AdminStaff />} />
                 <Route path="documents" element={<AdminDocuments />} />
                 <Route path="donation" element={<AdminDonation />} />
               </Route>

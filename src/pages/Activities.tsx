@@ -151,26 +151,44 @@ export const Activities: React.FC = () => {
                 onClick={() => setSelectedActivity(act)}
               >
                 <div>
-                  {/* Image with badges */}
-                  <div className="aspect-[16/10] overflow-hidden bg-stone-100 relative">
-                    <SafeImage
-                      src={act.image_url}
-                      alt={title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
+                  {/* Image or Thematic Header */}
+                  {act.image_url ? (
+                    <div className="aspect-[16/10] overflow-hidden bg-stone-100 relative">
+                      <SafeImage
+                        src={act.image_url}
+                        alt={title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
 
-                    {/* Category pill */}
-                    <span className="absolute top-3 left-3 rtl:left-auto rtl:right-3 text-[11px] font-bold bg-emerald-950/80 text-amber-300 px-3 py-1 rounded-full backdrop-blur-xs border border-amber-400/20">
-                      {category}
-                    </span>
-
-                    {/* Video badge if video is present */}
-                    {act.video_url && (
-                      <span className="absolute top-3 right-3 rtl:right-auto rtl:left-3 p-1.5 bg-red-600 text-white rounded-full shadow-md" title={t('watch_video')}>
-                        <Video className="w-3.5 h-3.5" />
+                      {/* Category pill */}
+                      <span className="absolute top-3 left-3 rtl:left-auto rtl:right-3 text-[11px] font-bold bg-emerald-950/80 text-amber-300 px-3 py-1 rounded-full backdrop-blur-xs border border-amber-400/20">
+                        {category}
                       </span>
-                    )}
-                  </div>
+
+                      {/* Video badge if video is present */}
+                      {act.video_url && (
+                        <span className="absolute top-3 right-3 rtl:right-auto rtl:left-3 p-1.5 bg-red-600 text-white rounded-full shadow-md" title={t('watch_video')}>
+                          <Video className="w-3.5 h-3.5" />
+                        </span>
+                      )}
+                    </div>
+                  ) : (
+                    <div className="h-28 bg-gradient-to-br from-emerald-950 via-emerald-900 to-emerald-950 text-white p-5 relative flex items-center justify-between border-b border-emerald-800/40">
+                      <div className="flex items-center gap-2">
+                        <div className="w-9 h-9 rounded-xl bg-emerald-800/80 border border-amber-400/30 flex items-center justify-center text-amber-400 shadow-2xs">
+                          <Award className="w-4 h-4" />
+                        </div>
+                        <span className="text-xs font-bold text-amber-300 bg-emerald-900/90 px-2.5 py-0.5 rounded-full border border-amber-400/20">
+                          {category}
+                        </span>
+                      </div>
+                      {act.video_url && (
+                        <span className="p-1.5 bg-red-600 text-white rounded-full shadow-md" title={t('watch_video')}>
+                          <Video className="w-3.5 h-3.5" />
+                        </span>
+                      )}
+                    </div>
+                  )}
 
                   {/* Card Content */}
                   <div className="p-5 sm:p-6 space-y-3">

@@ -110,18 +110,31 @@ export const Programs: React.FC = () => {
                 className="bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-200/80 hover:shadow-md transition-all flex flex-col justify-between group"
               >
                 <div>
-                  <div className="aspect-[16/10] overflow-hidden bg-stone-100 relative">
-                    <SafeImage
-                      src={prog.image_url}
-                      alt={title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    {ageGroup && (
-                      <span className="absolute bottom-3 left-3 rtl:left-auto rtl:right-3 text-[11px] font-bold bg-emerald-950/80 text-amber-300 px-3 py-1 rounded-full backdrop-blur-xs border border-amber-400/20">
-                        {ageGroup}
+                  {prog.image_url ? (
+                    <div className="aspect-[16/10] overflow-hidden bg-stone-100 relative">
+                      <SafeImage
+                        src={prog.image_url}
+                        alt={title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      {ageGroup && (
+                        <span className="absolute bottom-3 left-3 rtl:left-auto rtl:right-3 text-[11px] font-bold bg-emerald-950/80 text-amber-300 px-3 py-1 rounded-full backdrop-blur-xs border border-amber-400/20">
+                          {ageGroup}
+                        </span>
+                      )}
+                    </div>
+                  ) : (
+                    <div className="px-6 pt-6 flex items-center justify-between">
+                      {ageGroup ? (
+                        <span className="text-[11px] font-bold bg-emerald-100/80 text-emerald-900 px-3 py-1 rounded-full border border-emerald-200">
+                          {ageGroup}
+                        </span>
+                      ) : <span />}
+                      <span className="p-2 bg-emerald-50 text-emerald-800 rounded-xl">
+                        <BookOpen className="w-4 h-4" />
                       </span>
-                    )}
-                  </div>
+                    </div>
+                  )}
 
                   <div className="p-6 space-y-3">
                     <h2 className="text-xl font-bold text-stone-900 group-hover:text-emerald-800 transition-colors">

@@ -6,7 +6,8 @@ import {
   Problem, 
   StudentStatistic, 
   StudentActivity, 
-  LegalDocument 
+  LegalDocument,
+  StaffMember 
 } from '../types';
 import { 
   initialSiteSettings, 
@@ -15,7 +16,8 @@ import {
   initialProblems, 
   initialStatistics, 
   initialActivities, 
-  initialDocuments 
+  initialDocuments,
+  initialStaff 
 } from './initialData';
 
 // Local storage helpers for mock/offline fallback
@@ -539,14 +541,96 @@ export async function deleteLegalDocument(id: string): Promise<void> {
   setLocalItem('documents', current.filter(d => d.id !== id));
 }
 
-// 8. Admin Dashboard Aggregates
+// 8. Institution Staff & Faculty
+export async function getStaffMembers(includeUnpublished = false): Promise<StaffMember[]> {
+  if (isSupabaseConfigured) {
+    try {
+      let query = supabase.from('institution_staff').select('*').order('display_order', { ascending: true });
+      if (!includeUnpublished) {
+        query = query.eq('is_published', true);
+      }
+      const { data, error } = await query;
+      if (!error && data && data.length > 0) return data as StaffMember[];
+    } catch (err) {
+      console.warn('Supabase institution_staff error, using local fallback:', err);
+    }
+  }
+
+  const local = getLocalItem<StaffMember[]>('staff', initialStaff);
+  const filtered = includeUnpublished ? local : local.filter(s => s.is_published);
+  return filtered.sort((a, b) => a.display_order - b.display_order);
+}
+
+export async function saveStaffMember(staff: Partial<StaffMember>): Promise<StaffMember> {
+  if (isSupabaseConfigured) {
+    try {
+      if (staff.id && !staff.id.startsWith('st-')) {
+        const { data, error } = await supabase
+          .from('institution_staff')
+          .update({ ...staff, updated_at: new Date().toISOString() })
+          .eq('id', staff.id)
+          .select()
+          .single();
+        if (!error && data) return data as StaffMember;
+      } else {
+        const { id, ...newStaff } = staff;
+        const { data, error } = await supabase
+          .from('institution_staff')
+          .insert(newStaff)
+          .select()
+          .single();
+        if (!error && data) return data as StaffMember;
+      }
+    } catch (err) {
+      console.warn('Failed to save staff to Supabase, falling back to local storage:', err);
+    }
+  }
+
+  const current = getLocalItem<StaffMember[]>('staff', initialStaff);
+  if (staff.id) {
+    const updatedList = current.map(s => s.id === staff.id ? { ...s, ...staff } as StaffMember : s);
+    setLocalItem('staff', updatedList);
+    return updatedList.find(s => s.id === staff.id)!;
+  } else {
+    const newMember: StaffMember = {
+      id: `st-${Date.now()}`,
+      name_en: staff.name_en || '',
+      name_ur: staff.name_ur || '',
+      role_en: staff.role_en || '',
+      role_ur: staff.role_ur || '',
+      category: staff.category || 'teaching',
+      display_order: staff.display_order ?? (current.length + 1),
+      is_published: staff.is_published ?? true,
+      created_at: new Date().toISOString(),
+    };
+    const updatedList = [...current, newMember];
+    setLocalItem('staff', updatedList);
+    return newMember;
+  }
+}
+
+export async function deleteStaffMember(id: string): Promise<void> {
+  if (isSupabaseConfigured) {
+    try {
+      const { error } = await supabase.from('institution_staff').delete().eq('id', id);
+      if (!error) return;
+    } catch (err) {
+      console.warn('Failed to delete staff on Supabase:', err);
+    }
+  }
+  const current = getLocalItem<StaffMember[]>('staff', initialStaff);
+  setLocalItem('staff', current.filter(s => s.id !== id));
+}
+
+// 9. Admin Dashboard Aggregates
 export async function getDashboardStats() {
-  const [progs, probs, stats, acts, docs] = await Promise.all([
+  const [progs, probs, stats, acts, docs, staffList] = await Promise.all([
     getPrograms(true),
     getProblems(true),
     getStudentStatistics(true),
     getStudentActivities(true),
     getLegalDocuments(true),
+    getStaffMembers(true),
   ]);
 
   return {
@@ -559,6 +643,8 @@ export async function getDashboardStats() {
     publishedActivities: acts.filter(a => a.is_published).length,
     totalDocuments: docs.length,
     publishedDocuments: docs.filter(d => d.is_published && d.is_public).length,
+    totalStaff: staffList.length,
     isSupabaseLive: isSupabaseConfigured,
   };
 }
+

@@ -13,7 +13,8 @@ import {
   X, 
   ExternalLink, 
   ArrowRight,
-  ShieldAlert
+  ShieldAlert,
+  Video
 } from 'lucide-react';
 
 interface ProblemsProps {
@@ -132,30 +133,84 @@ export const Problems: React.FC<ProblemsProps> = ({ onOpenDonate }) => {
                 className="bg-white rounded-3xl overflow-hidden shadow-sm border border-stone-200/80 hover:shadow-md transition-all flex flex-col justify-between group"
               >
                 <div>
-                  <div className="aspect-[16/10] overflow-hidden bg-stone-100 relative">
-                    <SafeImage
-                      src={prob.image_url}
-                      alt={title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute top-3 left-3 rtl:left-auto rtl:right-3 flex items-center gap-1.5">
-                      {prob.status === 'active' && (
-                        <span className="text-[11px] font-bold bg-amber-500 text-stone-950 px-2.5 py-0.5 rounded-full shadow-xs">
-                          {t('status_active')}
-                        </span>
-                      )}
-                      {isResolved && (
-                        <span className="text-[11px] font-bold bg-emerald-600 text-white px-2.5 py-0.5 rounded-full shadow-xs">
-                          {t('status_resolved')}
-                        </span>
-                      )}
-                      {isArchived && (
-                        <span className="text-[11px] font-bold bg-stone-600 text-white px-2.5 py-0.5 rounded-full shadow-xs">
-                          {t('status_archived')}
+                  {prob.image_url ? (
+                    <div className="aspect-[16/10] overflow-hidden bg-stone-100 relative">
+                      <SafeImage
+                        src={prob.image_url}
+                        alt={title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute top-3 left-3 rtl:left-auto rtl:right-3 flex items-center gap-1.5">
+                        {prob.status === 'active' && (
+                          <span className="text-[11px] font-bold bg-amber-500 text-stone-950 px-2.5 py-0.5 rounded-full shadow-xs">
+                            {t('status_active')}
+                          </span>
+                        )}
+                        {isResolved && (
+                          <span className="text-[11px] font-bold bg-emerald-600 text-white px-2.5 py-0.5 rounded-full shadow-xs">
+                            {t('status_resolved')}
+                          </span>
+                        )}
+                        {isArchived && (
+                          <span className="text-[11px] font-bold bg-stone-600 text-white px-2.5 py-0.5 rounded-full shadow-xs">
+                            {t('status_archived')}
+                          </span>
+                        )}
+                      </div>
+
+                      {prob.video_url && (
+                        <span 
+                          className="absolute top-3 right-3 rtl:right-auto rtl:left-3 px-2.5 py-1 bg-red-600 text-white rounded-full shadow-md flex items-center gap-1 text-[11px] font-bold"
+                          title="Appeal Video Available"
+                        >
+                          <Video className="w-3.5 h-3.5" />
+                          <span>Video</span>
                         </span>
                       )}
                     </div>
-                  </div>
+                  ) : prob.video_url ? (
+                    <div className="h-28 bg-gradient-to-br from-stone-900 to-stone-950 text-white p-5 relative flex items-center justify-between border-b border-stone-800">
+                      <div className="flex items-center gap-2.5">
+                        <div className="w-10 h-10 rounded-xl bg-red-600 flex items-center justify-center text-white shadow-md">
+                          <Video className="w-5 h-5" />
+                        </div>
+                        <div>
+                          <span className="text-xs font-bold text-white block">Video Appeal</span>
+                          <span className="text-[10px] text-stone-400">Watch documentary video</span>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-1.5">
+                        {prob.status === 'active' && (
+                          <span className="text-[11px] font-bold bg-amber-500 text-stone-950 px-2.5 py-0.5 rounded-full shadow-xs">
+                            {t('status_active')}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="px-6 pt-6 flex items-center justify-between">
+                      <div>
+                        {prob.status === 'active' && (
+                          <span className="text-[11px] font-bold bg-amber-500 text-stone-950 px-3 py-1 rounded-full shadow-xs">
+                            {t('status_active')}
+                          </span>
+                        )}
+                        {isResolved && (
+                          <span className="text-[11px] font-bold bg-emerald-600 text-white px-3 py-1 rounded-full shadow-xs">
+                            {t('status_resolved')}
+                          </span>
+                        )}
+                        {isArchived && (
+                          <span className="text-[11px] font-bold bg-stone-600 text-white px-3 py-1 rounded-full shadow-xs">
+                            {t('status_archived')}
+                          </span>
+                        )}
+                      </div>
+                      <span className="p-2 bg-amber-50 text-amber-800 rounded-xl">
+                        <HelpCircle className="w-4 h-4" />
+                      </span>
+                    </div>
+                  )}
 
                   <div className="p-6 space-y-3">
                     {prob.requested_amount && (
@@ -232,17 +287,37 @@ export const Problems: React.FC<ProblemsProps> = ({ onOpenDonate }) => {
               </div>
 
               <div className="p-4 sm:p-6 space-y-5 sm:space-y-6">
-                {selectedProblem.video_url ? (
-                  <VideoEmbed url={selectedProblem.video_url} title={getField(selectedProblem, 'title')} />
-                ) : selectedProblem.image_url ? (
-                  <div className="aspect-[16/9] rounded-2xl overflow-hidden bg-stone-100">
-                    <SafeImage
-                      src={selectedProblem.image_url}
-                      alt={getField(selectedProblem, 'title')}
-                      className="w-full h-full object-cover"
-                    />
+                {/* Media Section: Video Embed and/or Image */}
+                {(selectedProblem.video_url || selectedProblem.image_url) && (
+                  <div className="space-y-4">
+                    {selectedProblem.video_url && (
+                      <div className="space-y-2">
+                        <div className="flex items-center gap-1.5 text-xs font-bold text-stone-800">
+                          <Video className="w-4 h-4 text-red-600" />
+                          <span>{isRtl ? 'ویڈیو پیغام و دستاویزی جائزہ' : 'Video Appeal & Documentary'}</span>
+                        </div>
+                        <VideoEmbed url={selectedProblem.video_url} title={getField(selectedProblem, 'title')} />
+                      </div>
+                    )}
+
+                    {selectedProblem.image_url && (
+                      <div className="space-y-2">
+                        {selectedProblem.video_url && (
+                          <span className="text-xs font-bold text-stone-700 block">
+                            {isRtl ? 'تصاویر و کوائف' : 'Photographic Documentation'}
+                          </span>
+                        )}
+                        <div className="aspect-[16/9] rounded-2xl overflow-hidden bg-stone-100 border border-stone-200">
+                          <SafeImage
+                            src={selectedProblem.image_url}
+                            alt={getField(selectedProblem, 'title')}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </div>
+                    )}
                   </div>
-                ) : null}
+                )}
 
                 <div>
                   <h3 className="text-2xl font-bold text-stone-900 mb-2">

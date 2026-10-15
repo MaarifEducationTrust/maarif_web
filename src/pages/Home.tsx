@@ -1,38 +1,39 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../i18n/LanguageContext';
-import { 
-  SiteSettings, 
-  HomepageSection, 
-  Program, 
-  Problem, 
-  StudentStatistic, 
-  LegalDocument 
+import {
+  SiteSettings,
+  HomepageSection,
+  Program,
+  Problem,
+  StudentStatistic,
+  LegalDocument
 } from '../types';
-import { 
-  getSiteSettings, 
-  getHomepageSections, 
-  getPrograms, 
-  getProblems, 
-  getStudentStatistics, 
-  getLegalDocuments 
+import {
+  getSiteSettings,
+  getHomepageSections,
+  getPrograms,
+  getProblems,
+  getStudentStatistics,
+  getLegalDocuments
 } from '../lib/db';
 import { SafeImage } from '../components/common/SafeImage';
 import { VideoEmbed } from '../components/common/VideoEmbed';
 import { IconRenderer } from '../components/common/IconRenderer';
 import { QRCodeDisplay } from '../components/common/QRCodeDisplay';
-import { 
-  ArrowRight, 
-  Heart, 
-  BookOpen, 
-  ShieldCheck, 
-  CheckCircle2, 
-  ExternalLink, 
-  QrCode, 
-  Building2, 
+import {
+  ArrowRight,
+  Heart,
+  BookOpen,
+  ShieldCheck,
+  CheckCircle2,
+  ExternalLink,
+  QrCode,
+  Building2,
   Sparkles,
   Compass,
-  Award
+  Award,
+  Video
 } from 'lucide-react';
 
 interface HomeProps {
@@ -141,13 +142,13 @@ export const Home: React.FC<HomeProps> = ({ onOpenDonate }) => {
                 </p>
 
                 <div className="flex flex-col xs:flex-row flex-wrap items-stretch xs:items-center justify-center lg:justify-start rtl:lg:justify-end gap-2.5 sm:gap-4 pt-2">
-                  <a
+                  {/* <a
                     href="#about-section"
                     className="w-full xs:w-auto px-5 py-3 rounded-xl bg-white text-emerald-950 hover:bg-stone-100 font-bold text-xs sm:text-sm shadow-md transition-all inline-flex items-center justify-center gap-2 shrink-0"
                   >
                     <span>{t('hero_btn_learn')}</span>
                     <ArrowRight className={`w-3.5 h-3.5 ${isRtl ? 'rotate-180' : ''}`} />
-                  </a>
+                  </a> */}
 
                   {settings.donation_enabled && (
                     <button
@@ -309,13 +310,15 @@ export const Home: React.FC<HomeProps> = ({ onOpenDonate }) => {
                   key={prog.id}
                   className="bg-white rounded-3xl overflow-hidden shadow-2xs border border-stone-200/80 flex flex-col justify-between hover:shadow-md transition-all group"
                 >
-                  <div className="aspect-[16/10] overflow-hidden bg-stone-100">
-                    <SafeImage
-                      src={prog.image_url}
-                      alt={title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
+                  {prog.image_url && (
+                    <div className="aspect-[16/10] overflow-hidden bg-stone-100">
+                      <SafeImage
+                        src={prog.image_url}
+                        alt={title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+                  )}
                   <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-3">
                     <div className="space-y-1.5">
                       {ageGroup && (
@@ -424,13 +427,33 @@ export const Home: React.FC<HomeProps> = ({ onOpenDonate }) => {
                   key={item.id}
                   className="bg-white rounded-3xl overflow-hidden shadow-2xs border border-stone-200/80 flex flex-col justify-between hover:shadow-md transition-all group"
                 >
-                  <div className="aspect-[16/10] overflow-hidden bg-stone-100">
-                    <SafeImage
-                      src={item.image_url}
-                      alt={title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
+                  {item.image_url ? (
+                    <div className="aspect-[16/10] overflow-hidden bg-stone-100 relative">
+                      <SafeImage
+                        src={item.image_url}
+                        alt={title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      {item.video_url && (
+                        <span
+                          className="absolute top-3 right-3 rtl:right-auto rtl:left-3 px-2 py-0.5 bg-red-600 text-white rounded-full shadow-md flex items-center gap-1 text-[10px] font-bold"
+                          title="Appeal Video Available"
+                        >
+                          <Video className="w-3 h-3" />
+                          <span>Video</span>
+                        </span>
+                      )}
+                    </div>
+                  ) : item.video_url ? (
+                    <div className="h-24 bg-gradient-to-br from-stone-900 to-stone-950 text-white p-4 relative flex items-center justify-between border-b border-stone-800">
+                      <div className="flex items-center gap-2">
+                        <div className="w-8 h-8 rounded-lg bg-red-600 flex items-center justify-center text-white shadow-xs">
+                          <Video className="w-4 h-4" />
+                        </div>
+                        <span className="text-xs font-bold text-white">Video Appeal Attached</span>
+                      </div>
+                    </div>
+                  ) : null}
                   <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-3">
                     <div className="space-y-1.5">
                       <div className="flex items-center justify-between gap-2">
@@ -580,7 +603,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenDonate }) => {
 
               {/* QR Preview Widget with Responsive QRCodeDisplay */}
               <div className="md:col-span-5 flex flex-col items-center justify-center w-full">
-                <div 
+                <div
                   onClick={onOpenDonate}
                   className="cursor-pointer bg-white p-3.5 sm:p-5 rounded-2xl shadow-xl border-2 border-amber-400/50 hover:scale-[1.02] transition-transform text-center group w-full max-w-xs"
                 >

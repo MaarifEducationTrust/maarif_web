@@ -121,28 +121,30 @@ export const DonationModal: React.FC<DonationModalProps> = ({ isOpen, onClose, s
                   <span>{t('donation_bank_title')}</span>
                 </div>
 
-                <div className="space-y-2.5 text-xs">
-                  <div>
-                    <span className="text-stone-500 block mb-0.5 text-[11px]">{t('acc_holder')}</span>
-                    <span className="font-semibold text-stone-800 text-xs sm:text-sm block break-words">
-                      {settings.account_holder || 'Madrasa Educational Trust'}
-                    </span>
-                  </div>
-
-                  <div>
-                    <span className="text-stone-500 block mb-0.5 text-[11px]">{t('bank_name')}</span>
-                    <span className="font-medium text-stone-800 text-xs break-words">
-                      {settings.bank_name || 'State Bank of India'} {settings.branch ? `(${settings.branch})` : ''}
-                    </span>
-                  </div>
-
-                  <div>
-                    <span className="text-stone-500 block mb-0.5 text-[11px]">{t('acc_num')}</span>
-                    <div className="flex items-center justify-between bg-white px-2.5 py-1.5 rounded-lg border border-emerald-200/80 shadow-2xs">
-                      <span className="font-mono font-bold text-emerald-950 text-xs sm:text-sm truncate mr-2">
-                        {settings.account_number || '389201928312'}
+                {settings.account_number ? (
+                  <div className="space-y-2.5 text-xs">
+                    <div>
+                      <span className="text-stone-500 block mb-0.5 text-[11px]">{t('acc_holder')}</span>
+                      <span className="font-semibold text-stone-800 text-xs sm:text-sm block break-words">
+                        {settings.account_holder}
                       </span>
-                      {settings.account_number && (
+                    </div>
+
+                    {settings.bank_name && (
+                      <div>
+                        <span className="text-stone-500 block mb-0.5 text-[11px]">{t('bank_name')}</span>
+                        <span className="font-medium text-stone-800 text-xs break-words">
+                          {settings.bank_name} {settings.branch ? `(${settings.branch})` : ''}
+                        </span>
+                      </div>
+                    )}
+
+                    <div>
+                      <span className="text-stone-500 block mb-0.5 text-[11px]">{t('acc_num')}</span>
+                      <div className="flex items-center justify-between bg-white px-2.5 py-1.5 rounded-lg border border-emerald-200/80 shadow-2xs">
+                        <span className="font-mono font-bold text-emerald-950 text-xs sm:text-sm truncate mr-2">
+                          {settings.account_number}
+                        </span>
                         <button
                           onClick={() => copyToClipboard(settings.account_number, 'acc')}
                           className="text-emerald-700 hover:text-emerald-900 p-1 shrink-0"
@@ -154,32 +156,43 @@ export const DonationModal: React.FC<DonationModalProps> = ({ isOpen, onClose, s
                             <Copy className="w-3.5 h-3.5" />
                           )}
                         </button>
-                      )}
+                      </div>
                     </div>
-                  </div>
 
-                  <div>
-                    <span className="text-stone-500 block mb-0.5 text-[11px]">{t('ifsc')}</span>
-                    <div className="flex items-center justify-between bg-white px-2.5 py-1.5 rounded-lg border border-emerald-200/80 shadow-2xs">
-                      <span className="font-mono font-semibold text-emerald-950 text-xs sm:text-sm truncate mr-2">
-                        {settings.ifsc_code || 'SBIN0001234'}
-                      </span>
-                      {settings.ifsc_code && (
-                        <button
-                          onClick={() => copyToClipboard(settings.ifsc_code, 'ifsc')}
-                          className="text-emerald-700 hover:text-emerald-900 p-1 shrink-0"
-                          title="Copy IFSC"
-                        >
-                          {copiedItem === 'ifsc' ? (
-                            <Check className="w-3.5 h-3.5 text-emerald-600" />
-                          ) : (
-                            <Copy className="w-3.5 h-3.5" />
-                          )}
-                        </button>
-                      )}
+                    {settings.ifsc_code && (
+                      <div>
+                        <span className="text-stone-500 block mb-0.5 text-[11px]">{t('ifsc')}</span>
+                        <div className="flex items-center justify-between bg-white px-2.5 py-1.5 rounded-lg border border-emerald-200/80 shadow-2xs">
+                          <span className="font-mono font-semibold text-emerald-950 text-xs sm:text-sm truncate mr-2">
+                            {settings.ifsc_code}
+                          </span>
+                          <button
+                            onClick={() => copyToClipboard(settings.ifsc_code, 'ifsc')}
+                            className="text-emerald-700 hover:text-emerald-900 p-1 shrink-0"
+                            title="Copy IFSC"
+                          >
+                            {copiedItem === 'ifsc' ? (
+                              <Check className="w-3.5 h-3.5 text-emerald-600" />
+                            ) : (
+                              <Copy className="w-3.5 h-3.5" />
+                            )}
+                          </button>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <div className="space-y-3 py-2 text-stone-600 text-xs leading-relaxed">
+                    <p className="bg-white p-3 rounded-xl border border-emerald-100 text-[11px] text-stone-600">
+                      Official bank account information is being configured. For direct donations and receipt assistance, please contact the Madrasa directly:
+                    </p>
+                    <div className="space-y-1.5 font-medium text-[11px] text-emerald-950">
+                      <div>📞 Qari Suleman Saheb: <a href="tel:9892607755" className="font-bold underline">9892607755</a> / <a href="tel:9322171099" className="font-bold underline">9322171099</a></div>
+                      <div>💬 WhatsApp: <a href="https://wa.me/919930797935" target="_blank" rel="noopener noreferrer" className="font-bold underline">9930797935</a></div>
+                      <div>📞 Nazim-e-Taleemat: <a href="tel:9076441202" className="font-bold underline">9076441202</a></div>
                     </div>
                   </div>
-                </div>
+                )}
               </div>
 
               <div className="pt-3 border-t border-emerald-200/60 flex items-start gap-2 text-[11px] text-emerald-900/80">

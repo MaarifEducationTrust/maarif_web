@@ -1,7 +1,9 @@
 -- seed.sql
--- Initial seed data for Madrasa website
+-- Verified institutional seed data for Madrasa Afzal-ul-Maarif Education Trust
 
--- 1. Insert Initial Site Settings
+-- ==============================================================================
+-- 1. Insert Verified Site Settings
+-- ==============================================================================
 INSERT INTO public.site_settings (
   id,
   madrasa_name_en,
@@ -53,300 +55,349 @@ INSERT INTO public.site_settings (
   copyright_text_ur
 ) VALUES (
   'current',
-  'Madrasa Rabbani Baug',
-  'جامعہ ربانی باغ اسلامی تعلیمی ٹرسٹ',
-  'Centre for Classical Islamic Learning, Hifz-ul-Quran & Character Building',
-  'مرکزِ علومِ اسلامیہ، حفظ القرآن اور اخلاقی تربیت',
-  'https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&q=80&w=250',
-  'Serving Sacred Education with Trust & Integrity',
-  'دینی تعلیم اور اخلاقی کردار سازی کا معتبر و منظم ادارہ',
-  'Nurturing Minds with the Light of the Holy Quran & Sunnah',
-  'قرآن و سنت کی پاکیزہ روشنی میں نئی نسل کی دینی و اخلاقی نشوونما',
-  'Dedicated to comprehensive memorization of the Holy Quran, classical Arabic sciences, and disciplined character formation for the next generation.',
-  'قرآن کریم کے حفظ و تجوید، بنیادی اسلامی علوم اور باکردار اخلاقی تربیت کے لیے ایک پرسکون، منظم اور معیاری دینی تعلیمی ادارہ۔',
-  'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=1200',
-  'About Our Educational Institution',
-  'ہمارے ادارے کا تعارف اور پس منظر',
-  'Established with the objective of preserving traditional Islamic literacy and moral guidance, Madrasa Rabbani Baug provides an integrated environment where students memorize the Holy Quran while nurturing sound Islamic ethics, cleanliness, and responsibility.',
-  'جامعہ ربانی باغ کا بنیادی مقصد نئی نسل کو حفظِ کلامِ پاک کے ساتھ ساتھ اسلامی عقائد، بنیادی فقہی مسائل اور پاکیزہ اخلاق سے آراستہ کرنا ہے۔ یہاں مستحق اور یتیم طلبہ کو بھی معیاری ماحول اور مفت تعلیم فراہم کی جاتی ہے۔',
-  'To provide every enrolled child with deep Quranic comprehension, disciplined behavior, and a heart full of compassion and civic responsibility.',
-  'ہر طالب علم میں قرآنی شعور، باوقار کردار اور انسانیت کی بے لوث خدمت کا جذبہ پیدا کرنا۔',
-  'To be recognized as a premier sanctuary of traditional Islamic learning that produces upright, knowledgeable citizens.',
-  'ایک ایسا مثالی اسلامی تعلیمی مرکز بننا جو روایتی دینی تعلیم اور متوازن عملی زندگی کا بہترین نمونہ پیش کرے۔',
-  '1. Rigorous Hifz-ul-Quran curriculum under certified Asatizah.\n2. Tajweed according to classical riwayaat.\n3. Daily moral discourses (Tarbiyah and Sunnah etiquette).\n4. 100% free boarding and nutritional meals for needy and orphan learners.',
-  '۱۔ سند یافتہ اساتذہ کی زیرِ نگرانی حفظِ قرآن کریم کا مکمل نصاب۔\n۲۔ قواعدِ تجوید و ترتیل کی عملی مشق۔\n۳۔ روزانہ سنتِ نبوی کے مطابق آداب و اخلاق کی عملی تربیت۔\n۴۔ یتیم اور نادار طلبہ کے لیے مکمل مفت طعام، قیام اور طبی دیکھ بھال۔',
-  'Daily Quranic Recitation & Student Life',
-  'مدرسہ میں طلبہ کے روزمرہ تعلیمی معمولات کی جھلک',
-  'Experience the peaceful atmosphere of our classrooms, collective morning assemblies, and Tajweed practice sessions.',
-  'حلقۂ درس، صبح کی مجالس اور طلبہ کرام کے باقاعدہ تعلیمی و تربیتی معمولات کا مختصر و روح پرور مشاہدہ۔',
-  'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-  'https://images.unsplash.com/photo-1585036156171-384164a8c675?auto=format&fit=crop&q=80&w=1200',
-  '+91 98765 43210',
-  'contact@rabbanibaug.edu',
-  'Rabbani Baug Campus, Education Road, Dist. Cultural Heritage, India',
-  'ربانی باغ کیمپس، ایجوکیشن روڈ، ضلع ثقافتی مرکز، بھارت',
-  '+91 98765 43210',
+  'Madrasa Afzal-ul-Maarif Education Trust',
+  'مدرسہ افضل المعارف ایجوکیشن ٹرسٹ',
+  'Centre for Classical Islamic Learning, Hifz-ul-Quran & Academic Education',
+  'دینی و عصری تعلیم اور اخلاقی تربیت کا معتبر ادارہ',
+  '',
+  'Dedicated to Religious & Academic Education Since 2002',
+  'سنہ ۲۰۰۲ء سے دینی و عصری تعلیم اور اخلاقی تربیت میں مصروفِ عمل',
+  'Nurturing Minds with the Light of the Holy Quran & Education',
+  'قرآنِ پاک، دینی تعلیم اور عصری علوم کی روشنی میں بچوں کی ہمہ جہت تربیت',
+  'Providing children with religious and academic education, good character, and proper upbringing to build a better future.',
+  'بچوں کو دینی و عصری تعلیم، عمدہ اخلاق اور بہترین تربیت فراہم کرنا تاکہ ان کے روشن اور باوقار مستقبل کی تعمیر ہو سکے۔',
+  '',
+  'About Madrasa Afzal-ul-Maarif Education Trust',
+  'مدرسہ افضل المعارف ایجوکیشن ٹرسٹ کا تعارف',
+  'Operating at rented premises in Agripada, Mumbai since 2002, Madrasa Afzal-ul-Maarif Education Trust has been dedicated to providing children with religious and academic education alongside complete residential facilities, meals, clothing, and moral tarbiyah.',
+  'سنہ ۲۰۰۲ء سے آگری پاڑہ، ممبئی میں کرایہ کی عمارت میں قائم، مدرسہ افضل المعارف ایجوکیشن ٹرسٹ بچوں کو دینی و عصری تعلیم دینے کے ساتھ ساتھ ان کے قیام، طعام، لباس اور اخلاقی تربیت کی مکمل خدمات انجام دے رہا ہے۔',
+  'To provide children with religious and academic education, good character, and proper upbringing to build a better future.',
+  'بچوں کو دینی و عصری تعلیم، عمدہ اخلاق اور بہترین تربیت فراہم کرنا تاکہ ان کے روشن اور باوقار مستقبل کی تعمیر ہو سکے۔',
+  'To establish a permanent educational centre that ensures quality Islamic learning, academic schooling, and dignified residential care for all students.',
+  'ایک ایسی مستقل اور وسیع عمارت قائم کرنا جہاں طلبہ کو معیاری دینی تعلیم، اسکول کی تعلیم اور باوقار رہائشی سہولیات میسر آ سکیں۔',
+  E'1. Complete Quran education (Qaida, Naazra, and Hifz with Tajweed)\n2. School academic education (Urdu, Hindi, English, and Mathematics)\n3. Memorization of Prophetic Hadith and Masnoon Duas without looking at text\n4. Holistic residential care, weekly pocket money, and moral tarbiyah\n5. Striving towards establishing a permanent educational building',
+  E'۱۔ تجوید کے ساتھ مکمل قرآنی تعلیم (قاعدہ، ناظرہ اور حفظِ قرآن کریم)\n۲۔ اسکول کی بنیادی عصری تعلیم (اردو، ہندی، انگریزی اور ریاضی)\n۳۔ احادیثِ نبویہ اور مسنون دعاؤں کا زبانی حفظ\n۴۔ طلبہ کی مکمل رہائش، طعام، لباس، ہفتہ وار جیب خرچ اور اخلاقی تربیت\n۵۔ مدرسہ کے لیے ذاتی و مستقل عمارت کا قیام',
+  'Madrasa Activities & Daily Life',
+  'مدرسہ کے تعلیمی و تربیتی معمولات',
+  'Official documentary and educational video will be shared shortly.',
+  'مدرسہ کے تعلیمی و دستار بندی کا باضابطہ ویڈیو جلد شامل کیا جائے گا۔',
+  '',
+  '',
+  '9892607755, 9322171099',
+  'contact@maarif.org',
+  'Islam Building Compound, Next to Baug-e-Rabbani Tower, Near Arabic Masjid, Souter Street, Agripada, Mumbai – 400011.',
+  'اسلام بلڈنگ کمپاؤنڈ، متصل باغِ ربانی ٹاور، بالمقابل عربک مسجد، سوٹر اسٹریٹ، آگری پاڑہ، ممبئی - 400011',
+  '9930797935',
   true,
   '',
-  'madrasa@upi',
-  'State Bank of India',
-  'Madrasa Rabbani Baug Educational Trust',
-  '389201928312',
-  'SBIN0001234',
-  'Central Branch',
-  'Scan the verified QR code using any UPI payment app (Google Pay, PhonePe, Paytm, BHIM, or Banking Apps). For direct NEFT/RTGS transfers, use the official bank details provided below.',
-  'کسی بھی یو پی آئی ایپ (Google Pay، PhonePe، Paytm وغیرہ) کے ذریعے براہِ راست کیو آر کوڈ اسکین کرکے تعاون فرمائیں۔ آفیشل بینک اکاؤنٹ میں منتقلی کے لیے نیچے دی گئی تفصیلات استعمال فرمائیں۔',
-  'A non-profit educational and welfare trust dedicated to Quranic education, character building, and community support.',
-  'ایک غیر منافع بخش دینی و فلاحی ادارہ جو قرآنی تعلیم، کردار سازی اور مستحقین کی کفالت کے لیے کوشاں ہے۔',
-  'All rights reserved. Madrasa Rabbani Baug Educational Trust.',
-  'جملہ حقوق بحق جامعہ ربانی باغ تعلیمی ٹرسٹ محفوظ ہیں۔'
-) ON CONFLICT (id) DO UPDATE SET updated_at = now();
+  '',
+  '',
+  'Madrasa Afzal-ul-Maarif Education Trust',
+  '',
+  '',
+  'Agripada, Mumbai',
+  'Official donation QR code and bank account information will be updated upon administrative verification. Please contact Qari Suleman Saheb (9892607755 / 9322171099) or via WhatsApp (9930797935) for direct guidance.',
+  'عطیات کی منتقلی کے لیے باضابطہ بینک اکاؤنٹ اور کیو آر کوڈ تصدیق کے بعد جاری کیا جائے گا۔ رہنمائی کے لیے حضرت قاری سلیمان صاحب (9892607755 / 9322171099) یا واٹس ایپ (9930797935) پر رابطہ فرمائیں۔',
+  'Madrasa Afzal-ul-Maarif Education Trust — Operating since 2002 at Agripada, Mumbai. Dedicated to religious and academic education.',
+  'مدرسہ افضل المعارف ایجوکیشن ٹرسٹ — سنہ ۲۰۰۲ء سے آگری پاڑہ، ممبئی میں دینی و عصری تعلیم اور اخلاقی تربیت میں مصروفِ عمل۔',
+  'All Rights Reserved. Madrasa Afzal-ul-Maarif Education Trust.',
+  'جملہ حقوق بحق مدرسہ افضل المعارف ایجوکیشن ٹرسٹ محفوظ ہیں۔'
+) ON CONFLICT (id) DO UPDATE SET
+  madrasa_name_en = EXCLUDED.madrasa_name_en,
+  madrasa_name_ur = EXCLUDED.madrasa_name_ur,
+  tagline_en = EXCLUDED.tagline_en,
+  tagline_ur = EXCLUDED.tagline_ur,
+  logo_url = EXCLUDED.logo_url,
+  hero_badge_en = EXCLUDED.hero_badge_en,
+  hero_badge_ur = EXCLUDED.hero_badge_ur,
+  hero_title_en = EXCLUDED.hero_title_en,
+  hero_title_ur = EXCLUDED.hero_title_ur,
+  hero_subtitle_en = EXCLUDED.hero_subtitle_en,
+  hero_subtitle_ur = EXCLUDED.hero_subtitle_ur,
+  hero_image_url = EXCLUDED.hero_image_url,
+  about_heading_en = EXCLUDED.about_heading_en,
+  about_heading_ur = EXCLUDED.about_heading_ur,
+  about_history_en = EXCLUDED.about_history_en,
+  about_history_ur = EXCLUDED.about_history_ur,
+  about_mission_en = EXCLUDED.about_mission_en,
+  about_mission_ur = EXCLUDED.about_mission_ur,
+  about_vision_en = EXCLUDED.about_vision_en,
+  about_vision_ur = EXCLUDED.about_vision_ur,
+  about_objectives_en = EXCLUDED.about_objectives_en,
+  about_objectives_ur = EXCLUDED.about_objectives_ur,
+  intro_video_title_en = EXCLUDED.intro_video_title_en,
+  intro_video_title_ur = EXCLUDED.intro_video_title_ur,
+  intro_video_desc_en = EXCLUDED.intro_video_desc_en,
+  intro_video_desc_ur = EXCLUDED.intro_video_desc_ur,
+  intro_video_url = EXCLUDED.intro_video_url,
+  intro_video_thumb = EXCLUDED.intro_video_thumb,
+  phone = EXCLUDED.phone,
+  email = EXCLUDED.email,
+  address_en = EXCLUDED.address_en,
+  address_ur = EXCLUDED.address_ur,
+  whatsapp = EXCLUDED.whatsapp,
+  donation_enabled = EXCLUDED.donation_enabled,
+  donation_qr_url = EXCLUDED.donation_qr_url,
+  upi_id = EXCLUDED.upi_id,
+  bank_name = EXCLUDED.bank_name,
+  account_holder = EXCLUDED.account_holder,
+  account_number = EXCLUDED.account_number,
+  ifsc_code = EXCLUDED.ifsc_code,
+  branch = EXCLUDED.branch,
+  donation_instructions_en = EXCLUDED.donation_instructions_en,
+  donation_instructions_ur = EXCLUDED.donation_instructions_ur,
+  footer_text_en = EXCLUDED.footer_text_en,
+  footer_text_ur = EXCLUDED.footer_text_ur,
+  copyright_text_en = EXCLUDED.copyright_text_en,
+  copyright_text_ur = EXCLUDED.copyright_text_ur;
 
--- 2. Insert Homepage Sections
+-- ==============================================================================
+-- 2. Insert Default Homepage Sections
+-- ==============================================================================
 INSERT INTO public.homepage_sections (section_key, title_en, title_ur, subtitle_en, subtitle_ur, is_visible, display_order)
 VALUES
-  ('hero', 'Hero Banner', 'مرکزی بینر', 'Main welcome message and introduction', 'مرکزی تعارفی پیغام', true, 1),
-  ('about', 'About the Madrasa', 'مدرسہ کا تعارف', 'History, mission, and institutional vision', 'تاریخ، مشن اور مقاصد', true, 2),
-  ('video', 'Introductory Video', 'تعارفی ویڈیو', 'Visual tour and student daily life', 'تعلیمی ماحول کا ویڈیو مشاہدہ', true, 3),
-  ('programs', 'Educational Programs', 'تعلیمی شعبہ جات', 'Overview of departments and courses', 'مختلف کورسز اور تعلیمی درجات', true, 4),
-  ('impact', 'Students & Impact', 'طلبہ اور تعلیمی خدمات', 'Verified statistics of students and staff', 'طلبہ و اساتذہ کے تصدیق شدہ اعداد و شمار', true, 5),
-  ('needs', 'Current Needs & Support', 'ادارے کی موجودہ ضروریات', 'Active appeals for infrastructure and welfare', 'تعمیری اور تعلیمی امداد کی اپیلیں', true, 6),
-  ('documents', 'Legal & Transparency', 'قانونی دستاویزات و شفافیت', 'Publicly approved registration certificates', 'منظور شدہ سرکاری و انتظامی اسناد', true, 7),
-  ('donation', 'Contribution & Donation', 'تعاون اور عطیات', 'Direct QR scan and bank transfer details', 'کیو آر کوڈ اور بینک اکاؤنٹ کی تفصیلات', true, 8)
-ON CONFLICT (section_key) DO NOTHING;
+  ('hero', 'Hero Banner', 'مرکزی بینر', 'Main headline, badge, and introduction', 'مرکزی عنوان اور تعارف', true, 1),
+  ('about', 'About the Madrasa', 'مدرسہ کا تعارف', 'Brief history, mission, vision, and objectives', 'تاریخ، مشن، وژن اور مقاصد', true, 2),
+  ('video', 'Introductory Video', 'تعارفی ویڈیو', 'Documentary and student activities', 'تعلیمی معمولات کی جھلک', false, 3),
+  ('programs', 'Educational Programs', 'تعلیمی شعبہ جات', 'Featured academic offerings and curricula', 'منتخب تعلیمی نصاب', true, 4),
+  ('impact', 'Students & Impact', 'طلبہ اور رہائشی کوائف', 'Verified student and residential statistics', 'تصدیق شدہ اعداد و شمار', true, 5),
+  ('needs', 'Current Needs & Appeals', 'ضروریات و اپیلیں', 'Institutional appeals and support requests', 'تعاون کی اپیلیں', true, 6),
+  ('documents', 'Legal & Transparency', 'قانونی اسناد و رجسٹریشن', 'Official trust records and certificates', 'دفتری و قانونی اسناد', true, 7),
+  ('donation', 'Donation & Contributions', 'عطیات و تعاون', 'Verified donation options and contact', 'براہِ راست تعاون اور رابطہ', true, 8)
+ON CONFLICT (section_key) DO UPDATE SET
+  title_en = EXCLUDED.title_en,
+  title_ur = EXCLUDED.title_ur,
+  subtitle_en = EXCLUDED.subtitle_en,
+  subtitle_ur = EXCLUDED.subtitle_ur,
+  is_visible = EXCLUDED.is_visible,
+  display_order = EXCLUDED.display_order;
 
--- 3. Insert Educational Programs
-INSERT INTO public.programs (title_en, title_ur, slug, short_desc_en, short_desc_ur, detailed_desc_en, detailed_desc_ur, age_group_en, age_group_ur, timing_en, timing_ur, curriculum_highlights_en, curriculum_highlights_ur, image_url, display_order, is_published)
-VALUES
-  (
-    'Hifz-ul-Quran (Full Memorization)',
-    'شعبۂ حفظِ قرآن کریم',
-    'hifz-ul-quran',
-    'Comprehensive memorization of the entire Holy Quran under certified Huffaz with daily revision.',
-    'مستند حفاظ کرام کی زیرِ نگرانی کلامِ الٰہی کا مکمل حفظ اور روزانہ کا پختہ دور۔',
-    'Our flagship program focuses on complete memorization of the Holy Quran with precise pronunciation, classical Tajweed rules, and methodical daily revision (Daur). Students are nurtured in a disciplined residential and day-boarding environment with individualized monitoring.',
-    'اس مبارک شعبے میں طلبہ کو تجوید کے ساتھ کلامِ پاک کے ۳۰ پاروں کا پختہ حفظ کرایا جاتا ہے۔ روزانہ سبق، سبقی اور منزل کا باقاعدہ جائزہ لیا جاتا ہے تاکہ حافظ بننے کے بعد قرآن کریم دلوں میں محفوظ رہے۔',
-    'Ages 8 to 16 years',
-    'عمر ۸ تا ۱۶ سال',
-    'Full-Time / Boarding (Fajr to Isha with structured breaks)',
-    'مکمل وقتی / شبانہ و روزانہ',
-    'Daily Sabbaq, Sabqi, and Manzil reviews; Tajweed articulation rules; Duas and Sunnah manners.',
-    'روزانہ نیا سبق، سبقی اور منزل؛ مخارج اور قواعدِ تجوید؛ مسنون دعائیں اور سنتِ نبوی کے آداب۔',
-    'https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&q=80&w=800',
-    1,
-    true
-  ),
-  (
-    'Nazra Quran with Tajweed',
-    'شعبۂ ناظرہ مع تجوید',
-    'nazra-quran-tajweed',
-    'Foundational recitation from Noorani Qaida to full Quranic fluent reading.',
-    'نورانی قاعدہ سے لے کر مکمل قرآن مجید کو درست تلفظ اور روانی کے ساتھ پڑھنے کی بنیادی تعلیم۔',
-    'Designed for beginners and young learners to build flawless phonetics and recitation habits. Emphasis is laid on Makharij (points of vocal articulation) and foundational Arabic alphabet recognition.',
-    'یہ شعبہ نونہالوں اور ابتدائی طلبہ کے لیے مختص ہے جہاں نورانی قاعدے کے ذریعے حروف کی درست ادائیگی، تجوید کے بنیادی قواعد اور روانی سے تلاوت سکھائی جاتی ہے۔',
-    'Ages 5 to 12 years',
-    'عمر ۵ تا ۱۲ سال',
-    'Morning & Afternoon Shifts (2 hours daily)',
-    'صبح اور بعد دوپہر کے اوقات (روزانہ ۲ گھنٹے)',
-    'Arabic phonetics, Noorani Qaida, 30th Juz memorization, daily Islamic supplications.',
-    'حروفِ تہجی کے مخارج، نورانی قاعدہ، آخری پارہ کی سورتوں کا زبانی حفظ اور روزمرہ دعائیں۔',
-    'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=800',
-    2,
-    true
-  ),
-  (
-    'Deeni Taleem & Islamic Basics',
-    'بنیادی دینی تعلیم و اخلاقیات',
-    'deeni-taleem-basics',
-    'Essential Islamic jurisprudence (Fiqh of Taharah & Salah), Aqeedah, and Seerat-un-Nabi.',
-    'طہارت، نماز کے مسائل، اسلامی عقائد اور سیرت النبی ﷺ کی بنیادی و ضروری تعلیم۔',
-    'Provides foundational religious literacy alongside Quranic studies. Students learn the essentials of Halal and Haram, practical performance of prayers, hygiene, and the golden examples of the Prophet (Peace Be Upon Him).',
-    'طلبہ کو روزمرہ زندگی کے لیے ضروری دینی معلومات فراہم کی جاتی ہیں، جن میں وضو، نماز، پاکی و ناپاکی کے احکام، ضروری عقائد اور سیرتِ طیبہ شامل ہیں۔',
-    'All Enrolled Students',
-    'تمام زیرِ تعلیم طلبہ',
-    'Integrated into daily class schedule',
-    'روزانہ کے تعلیمی نظام الاوقات کا حصہ',
-    'Practical Wudu & Salah practice, 40 Hadiths, Islamic manners and respectful conduct.',
-    'وضو اور نماز کی عملی مشق، ۴۰ منتخب احادیث، والدین اور اساتذہ کے ادب و احترام کے آداب۔',
-    'https://images.unsplash.com/photo-1585036156171-384164a8c675?auto=format&fit=crop&q=80&w=800',
-    3,
-    true
-  ),
-  (
-    'Evening Quran Learning for Adults & Youths',
-    'نوجوانوں اور بڑوں کے لیے شام کا قرآنی حلقہ',
-    'evening-adult-quran',
-    'Flexible evening classes for working youths and adults to rectify pronunciation and learn translation.',
-    'ملازمت پیشہ نوجوانوں اور بزرگوں کے لیے شام کے وقت قرآن درست پڑھنے کا خصوصی حلقہ۔',
-    'Tailored for working individuals and college students who wish to rectify their recitation, learn basic Quranic vocabulary, and understand essential injunctions of the faith.',
-    'یہ کلاس ان حضرات کے لیے ہے جو روزگار کے ساتھ ساتھ اپنے فارغ اوقات میں تلاوت درست کرنا اور دین کے بنیادی احکام سمجھنا چاہتے ہیں۔',
-    'Ages 16 and above',
-    'عمر ۱۶ سال سے زائد',
-    'Post-Maghrib to Isha (Flexible days)',
-    'بعد نمازِ مغرب تا عشاء',
-    'Tajweed rectification, basic Quranic vocabulary, Qiyam-ul-Layl practice.',
-    'تجوید کی اصلاح، قرآنی الفاظ کے بنیادی معانی، نماز کے اذکار کی تصحیح۔',
-    'https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&q=80&w=800',
-    4,
-    true
-  )
-ON CONFLICT (slug) DO NOTHING;
+-- ==============================================================================
+-- 3. Insert Verified Educational Programs
+-- ==============================================================================
+DELETE FROM public.programs;
 
--- 4. Insert Problems / Current Needs
-INSERT INTO public.problems (title_en, title_ur, slug, summary_en, summary_ur, description_en, description_ur, why_needed_en, why_needed_ur, requested_amount, status, image_url, donation_note_en, donation_note_ur, display_order, is_published)
-VALUES
-  (
-    'Student Hostel Clean Drinking Water & Filtration Plant',
-    'طلبہ کے ہاسٹل کے لیے صاف پینے کا پانی اور آر او فلٹر پلانٹ',
-    'clean-drinking-water-plant',
-    'Installing a commercial RO purification system to ensure hygienic drinking water for residential learners.',
-    'ہاسٹل کے طلبہ کے لیے صحت بخش اور جراثیم سے پاک پینے کا پانی مہیا کرنے کے لیے واٹر فلٹر پلانٹ کی تنصیب۔',
-    'With more than 400 students residing and studying on campus, the current ground water supply has high mineral hardness. To prevent water-borne illnesses and ensure child health, an industrial filtration unit is urgently needed.',
-    'کیمپس میں مقیم سینکڑوں طلبہ کے لیے زمینی پانی میں نمکیات زیادہ ہونے کی وجہ سے فلٹریشن پلانٹ کی سخت ضرورت ہے تاکہ بچے بیماریوں سے محفوظ رہ کر اطمینان کے ساتھ تعلیم حاصل کر سکیں۔',
-    'Protects young students from seasonal water contamination and gastrointestinal illness during long study months.',
-    'طلبہ کی صحت کی حفاظت اور موسمی بیماریوں سے بچاؤ کے لیے یہ بنیادی ضرورت ہے۔',
-    '₹ 1,75,000',
-    'active',
-    'https://images.unsplash.com/photo-1548839140-29a749e1bc4e?auto=format&fit=crop&q=80&w=800',
-    'You can contribute any amount towards this project via our QR code. Mention "Water Project" in your transaction note if possible.',
-    'آپ کیو آر کوڈ کے ذریعے اس تعمیری ضرورت میں حسبِ توفیق حصہ لے سکتے ہیں۔',
-    1,
-    true
-  ),
-  (
-    'Orphan & Needy Students Education & Boarding Sponsorship',
-    'یتیم اور نادار طلبہ کی مکمل تعلیمی و رہائشی کفالت',
-    'orphan-students-sponsorship',
-    'Providing complete free education, clothing, books, and 3 nutritious daily meals for underprivileged learners.',
-    'مستحق اور یتیم طلبہ کے لیے مفت کتب، یونیفارم، علاج معالجہ اور تینوں وقت کے معیاری طعام کی فراہمی۔',
-    'A significant portion of our students come from impoverished rural households or have lost their breadwinners. The Madrasa provides them 100% free food, bedding, clothing, medical care, and learning materials.',
-    'ہمارے مدرسہ میں زیرِ تعلیم طلبہ کی بڑی تعداد انتہائی غریب اور یتیم بچوں پر مشتمل ہے جن کے طعام، رہائش، علاج اور کتب کی تمام تر ذمہ داری جامعہ بخوشی ادا کر رہی ہے۔',
-    'Ensures that no dedicated seeker of knowledge is turned away due to financial helplessness.',
-    'کوئی بھی طالب علم مالی مجبوری یا غربت کی وجہ سے علمِ دین کی دولت سے محروم نہ رہے۔',
-    '₹ 2,400 / month per student',
-    'active',
-    'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800',
-    'Sponsor a student for one month (₹ 2,400) or one year (₹ 28,800). Every contribution directly aids a child in memorizing the Book of Allah.',
-    'ایک طالب علم کی ماہانہ کفالت ۲۴۰۰ روپے یا سالانہ کفالت میں حصہ ڈال کر صدقۂ جاریہ حاصل فرمائیں۔',
-    2,
-    true
-  ),
-  (
-    'Library Quranic Manuscripts & Reference Tafseer Collection',
-    'مکتبہ کے لیے تفاسیر اور مستند کتبِ حدیث کا ذخیرہ',
-    'library-tafseer-collection',
-    'Procuring authentic multi-volume Tafseers, Hadith dictionaries, and classical Arabic linguistic references.',
-    'اساتذہ اور طلبہ کے مطالعہ کے لیے معتبر تفاسیر، شروحاتِ حدیث اور عربی لغات کی فراہمی۔',
-    'To enrich the intellectual and scholarly foundation of both teachers and senior students, our reference library requires standard classical commentaries and pedagogical resources.',
-    'اساتذہ کی علمی تیاری اور طلبہ کی تحقیقی صلاحیتوں کو نکھارنے کے لیے مکتبہ میں بنیادی علمی و فقہی مصادر کا ہونا ناگزیر ہے۔',
-    'Empowers teachers to provide thorough, referenced answers to student queries.',
-    'اساتذہ اور طلبہ کے لیے مستند تحقیقی مواد اور کتبِ حوالہ کی دستیابی۔',
-    '₹ 85,000',
-    'active',
-    'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&q=80&w=800',
-    'Support the procurement of classical texts as a perpetual charitable endowment (Sadaqah Jariyah).',
-    'علمی کتب کا وقف صدقۂ جاریہ ہے، اس کارِ خیر میں اپنا حصہ ضرور شامل فرمائیں۔',
-    3,
-    true
-  )
-ON CONFLICT (slug) DO NOTHING;
+INSERT INTO public.programs (
+  title_en, title_ur, slug, short_desc_en, short_desc_ur, detailed_desc_en, detailed_desc_ur,
+  age_group_en, age_group_ur, timing_en, timing_ur, curriculum_highlights_en, curriculum_highlights_ur,
+  image_url, video_url, display_order, is_published
+) VALUES
+(
+  'Darja-e-Deeniyat (Qaida)',
+  'درجہ دینیات (قاعدہ)',
+  'darja-e-deeniyat-qaida',
+  'Foundational Qaida, basic Islamic education, memorization of Hadith and Masnoon Duas, and Urdu literacy.',
+  'بنیادی قاعدہ، ابتدائی اسلامی تعلیمات، زبانی حفظِ احادیث و مسنون دعائیں اور اردو پڑھنا لکھنا۔',
+  'Teaches elementary children correct phonetic recitation of Quranic Qaida with proper pronunciation, foundational Islamic tenets, and memorization of Hadith and Masnoon Duas through repetition without looking at text, along with Urdu reading and writing.',
+  'چھوٹے بچوں کے لیے قرآن کریم کے درست تلفظ کے ساتھ قاعدہ، بنیادی عقائد و طہارت، زبانی مسنون دعائیں، احادیثِ مبارکہ اور اردو تحریر و قرأت کی باقاعدہ تدریس۔',
+  '7–11 years',
+  '۷ تا ۱۱ سال',
+  'Daily Classes',
+  'روزانہ تعلیمی اوقات',
+  E'• Qaida recitation with correct Makharij\n• Basic Islamic education and tenets\n• Memorization of Hadith and Masnoon Duas (without looking at text)\n• Urdu reading and writing practice',
+  E'• مخارج کی صحت کے ساتھ نورانی قاعدہ\n• بنیادی اسلامی عقائد، آداب اور وضو کی عملی تعلیم\n• منتخب احادیث اور روزمرہ کی مسنون دعاؤں کا زبانی حفظ\n• اردو پڑھنے اور لکھنے کی باضابطہ مشق',
+  '',
+  '',
+  1,
+  true
+),
+(
+  'Darja-e-Naazra',
+  'درجہ ناظرہ قرآن کریم',
+  'darja-e-naazra',
+  'Recitation of the Holy Quran with Tajweed, memorization of Hadith and Masnoon Duas, and Urdu literacy.',
+  'تجوید و ترتیل کے ساتھ ناظرہ قرآن پاک، زبانی احادیث و مسنون دعائیں اور اردو تحریر و قرأت۔',
+  'Comprehensive instruction in reciting the entire Holy Quran with rules of Tajweed, continued memorization of Prophetic Hadith and daily Masnoon Duas through memorization, and advancing Urdu language literacy.',
+  'مکمل قرآن مجید کو قواعدِ تجوید کے مطابق روانی اور خوبصورت ترتیل کے ساتھ پڑھنے کی تدریس، مسنون دعاؤں اور اخلاقی احادیث کا زبانی حفظ، اور اردو مضمون نگاری۔',
+  '11–15 years',
+  '۱۱ تا ۱۵ سال',
+  'Daily Classes',
+  'روزانہ تعلیمی اوقات',
+  E'• Fluent Quran recitation with Tajweed rules\n• Pronunciation and phonetic discipline\n• Memorization of Hadith and Masnoon Duas\n• Urdu reading, comprehension, and writing',
+  E'• تجوید و صحتِ مخارج کے ساتھ مکمل ناظرہ قرآن پاک\n• ضروری قواعدِ تجوید، ادغام اور رموزِ اوقاف کی مشق\n• اہم مسنون دعاؤں اور اخلاقی احادیث کا زبانی حفظ\n• اردو مطالعہ، املاء اور تحریری مشق',
+  '',
+  '',
+  2,
+  true
+),
+(
+  'Darja-e-Hifz',
+  'درجہ حفظِ قرآن کریم',
+  'darja-e-hifz',
+  'Quran-e-Pak memorization education, retention through daily revision, Hadith memorization, and Urdu proficiency.',
+  'مکمل حفظِ قرآن مجید، پختہ دور و تکرار، احادیثِ مبارکہ اور اردو زبان کی تعلیم۔',
+  'Intensive memorization of the Holy Quran under expert Huffaz with systematic daily Sabaq (new lesson), Sabqi (recent lessons), and Manzil (revision) cycles. Accompanied by memorization of Hadith, Masnoon Duas, and moral character training.',
+  'ماہر اساتذہ و حفاظ کی زیرِ نگرانی قرآن مجید حفظ کرنے کا شعبہ۔ روزانہ نیا سبق، سبقی اور پختہ منزل کے ساتھ ساتھ مسنون آداب، احادیثِ نبویہ اور اخلاقی تربیت کا مکمل اہتمام۔',
+  '12–21 years',
+  '۱۲ تا ۲۱ سال',
+  'Full-time Residential Schedule',
+  'مکمل رہائشی تعلیمی اوقات',
+  E'• Complete memorization of the 30 Juz of the Holy Quran\n• Rigorous Sabaq, Sabqi, and Manzil retention system\n• Advanced Tajweed and voice modulation\n• Memorization of Prophetic Hadith and daily prayers\n• Urdu reading, writing, and moral character building',
+  E'• ۳۰ پاروں کا باقاعدہ و پختہ حفظ\n• سبق، سبقی اور منزل کا روزانہ سخت امتحانی نظام\n• احکامِ تجوید اور حسنِ ترتیل\n• مسنون دعاؤں اور نبوی ارشادات کا زبانی حفظ\n• اردو تحریر اور اخلاقی کردار سازی',
+  '',
+  '',
+  3,
+  true
+),
+(
+  'School Academic Education',
+  'عصری اسکول تعلیم',
+  'school-academic-education',
+  'Academic schooling covering Urdu, Hindi, English, and Mathematics taught alongside religious studies.',
+  'دینی تعلیم کے ساتھ ساتھ بنیادی عصری مضامین: اردو، ہندی، انگریزی اور ریاضی کی باقاعدہ تعلیم۔',
+  'Provides every enrolled child with formal schooling in modern foundational subjects including Urdu, Hindi, English, and Mathematics, ensuring balanced academic capability alongside their religious education.',
+  'جامعہ میں دینی تعلیم کے ساتھ ساتھ تمام بچوں کو جدید بنیادی مضامین کی معیاری تعلیم دی جاتی ہے تاکہ طلبہ زبان دانی اور حساب و کتاب میں مہارت حاصل کر کے ایک باصلاحیت شہری بن سکیں۔',
+  'All Enrolled Students',
+  'تمام زیرِ تعلیم طلبہ',
+  'Daily Academic Periods',
+  'روزانہ کے تعلیمی ادوار',
+  E'• English language, reading, and vocabulary\n• Hindi language reading, writing, and grammar\n• Urdu literature, comprehension, and composition\n• Mathematics and practical arithmetic\n• Moral education and general knowledge',
+  E'• انگریزی زبان، قرأت اور بنیادی گرائمر\n• ہندی زبان کی مکمل تحریر و قرأت\n• اردو ادب، انشائیہ اور املاء\n• بنیادی حساب اور ریاضیاتی فہم\n• اخلاقیات اور عام معلومات',
+  '',
+  '',
+  4,
+  true
+);
 
--- 5. Insert Student Statistics
-INSERT INTO public.student_statistics (label_en, label_ur, value, subtext_en, subtext_ur, icon_name, year_or_period, display_order, is_published)
-VALUES
-  ('Enrolled Students', 'کل زیرِ تعلیم طلبہ', '420+', 'Across all foundational and Hifz classes', 'تمام تعلیمی اور حفظ کے شعبوں میں', 'Users', 'Current Session', 1, true),
-  ('Certified Asatizah (Teachers)', 'سند یافتہ مخلص اساتذہ', '18', 'Experienced Huffaz and Islamic Scholars', 'ماہر حفاظ اور باعمل علماء کرام', 'GraduationCap', 'Academic Staff', 2, true),
-  ('Free Food & Boarding', 'مفت طعام و رہائش', '100%', 'Provided to orphan and needy learners', 'یتیم اور مستحق طلبہ کے لیے مکمل سہولت', 'HeartHandshake', 'Welfare Program', 3, true),
-  ('Graduated Huffaz', 'فارغ التحصیل حفاظِ کرام', '340+', 'Serving communities in various capacities', 'جو معاشرے میں قرآن کی روشنی پھیلا رہے ہیں', 'Award', 'Historical Total', 4, true)
-ON CONFLICT DO NOTHING;
+-- ==============================================================================
+-- 4. Insert Verified Primary Need (Permanent Building)
+-- ==============================================================================
+DELETE FROM public.problems;
 
--- 6. Insert Student Activities
-INSERT INTO public.student_activities (title_en, title_ur, description_en, description_ur, category_en, category_ur, activity_date, image_url, display_order, is_published)
-VALUES
-  (
-    'Annual Husn-e-Qirat & Tajweed Competition',
-    'سالانہ مسابقۂ حسنِ قرآت و ترتیل',
-    'Students showcased their recitation mastery evaluated by external visiting Qaris on phonetics and melodious delivery.',
-    'طلبہ کرام کے مابین حسنِ قرآت کا روح پرور مقابلہ جس میں مہمان قراء کرام نے منصف کے فرائض انجام دیے۔',
-    'Competition',
-    'مسابقہ',
-    '2026-09-15',
-    'https://images.unsplash.com/photo-1585036156171-384164a8c675?auto=format&fit=crop&q=80&w=800',
-    1,
-    true
-  ),
-  (
-    'Dastar-e-Fazilat (Hifz Completion Graduation Ceremony)',
-    'جلسۂ دستارِ فضیلت و تکمیلِ حفظِ قرآن',
-    'Honorary graduation assembly where 24 students who completed the full memorization were awarded ceremonial certificates.',
-    '۲۴ خوش نصیب طلبہ کی تکمیلِ حفظ کے موقع پر منعقدہ پروقار تقریب جس میں معززین اور والدین نے شرکت فرمائی۔',
-    'Graduation Ceremony',
-    'تقریبِ دستار بندی',
-    '2026-07-20',
-    'https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&q=80&w=800',
-    2,
-    true
-  ),
-  (
-    'Seerat-un-Nabi & Moral Etiquette Conference',
-    'سیرت النبی ﷺ کانفرنس اور اخلاقی تربیت',
-    'Interactive educational gathering emphasizing the character of the Holy Prophet (PBUH) and community hygiene.',
-    'حضور اکرم ﷺ کی حیاتِ طیبہ اور باہمی اخلاق و صفائی کی اہمیت پر خصوصی تعلیمی و تربیتی نشست۔',
-    'Educational Workshop',
-    'تربیتی نشست',
-    '2026-05-10',
-    'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=800',
-    3,
-    true
-  )
-ON CONFLICT DO NOTHING;
+INSERT INTO public.problems (
+  title_en, title_ur, slug, summary_en, summary_ur, description_en, description_ur,
+  why_needed_en, why_needed_ur, requested_amount, status, image_url, video_url, supporting_doc_url,
+  donation_note_en, donation_note_ur, display_order, is_published
+) VALUES (
+  'Need for a Permanent Madrasa Building',
+  'مدرسہ کے لیے ذاتی و مستقل عمارت کی ضرورت',
+  'permanent-madrasa-building',
+  'Since 2002, the Madrasa has operated in rented premises in Agripada, Mumbai. We appeal for your support to establish our own permanent educational center for children''s accommodation, worship, and learning.',
+  'ادارہ سنہ ۲۰۰۲ء سے کرایہ کی جگہ پر خدمات انجام دے رہا ہے۔ طلبہ کی رہائش، تعلیم اور عبادت کے لیے مستقل عمارت کے قیام کی پرخلوص اپیل۔',
+  E'Madrasa Afzal-ul-Maarif Education Trust has been providing religious and academic education while taking care of children''s accommodation, meals, and other daily needs.\n\nSince 2002, the Madrasa has been operating in rented premises. Limited space creates difficulties in providing a more comfortable and suitable environment for children''s education and residential needs.\n\nThe Madrasa''s primary objective is to establish its own larger, permanent premises where children can receive education and have suitable arrangements for accommodation, worship, and other essential needs.',
+  E'مدرسہ افضل المعارف ایجوکیشن ٹرسٹ بچوں کو دینی و عصری تعلیم دینے کے ساتھ ساتھ ان کے قیام، طعام، لباس اور دیگر ضروریات کی مکمل کفالت کرتا آ رہا ہے۔\n\nسنہ ۲۰۰۲ء سے یہ ادارہ کرایہ کی محدود عمارت میں چل رہا ہے۔ جگہ کی تنگی کی وجہ سے بچوں کی رہائش اور تعلیمی سرگرمیوں میں مشکلات پیش آتی ہیں۔\n\nادارے کا سب سے اہم مقصد اپنی مستقل اور کشادہ عمارت قائم کرنا ہے تاکہ نونہالانِ اسلام کے لیے رہائش، تعلیم، طہارت اور باجماعت نماز کا منظم اور پرسکون انتظام ہو سکے۔',
+  'We request your prayers, guidance, and support in helping the Madrasa work towards establishing a permanent educational centre. Together, we can help provide children with a better environment for religious and academic education and a stronger foundation for their future.',
+  'ہم آپ سے دعاؤں، مفید مشوروں اور ہر ممکن تعاون کی پرخلوص اپیل کرتے ہیں تاکہ مدرسہ اپنی مستقل عمارت کے خواب کو شرمندۂ تعبیر کر سکے۔ آپ کا تعاون نادار اور یتیم بچوں کے شاندار مستقبل کی ضمانت بنے گا۔',
+  '',
+  'active',
+  '',
+  '',
+  '',
+  'Please contact the Madrasa management directly for guidance on supporting our permanent building initiative.',
+  'مستقل عمارت کے قیام کے سلسلے میں معاونت کے لیے براہِ کرم مدرسہ کی انتظامیہ سے براہِ راست رابطہ فرمائیں۔',
+  1,
+  true
+);
 
--- 7. Insert Legal Documents
-INSERT INTO public.legal_documents (title_en, title_ur, description_en, description_ur, category_en, category_ur, file_url, thumbnail_url, issue_date, document_number, is_public, is_published, display_order)
-VALUES
-  (
-    'Madrasa Institutional Society / Trust Registration',
-    'سوسائٹی / تعلیمی ٹرسٹ رجسٹریشن سرٹیفکیٹ',
-    'Official government registration certificate establishing the legal entity of the educational trust.',
-    'سرکاری رجسٹرار آف سوسائٹیز کی جانب سے جاری کردہ تصدیق شدہ ٹرسٹ رجسٹریشن سرٹیفکیٹ۔',
-    'Registration Certificate',
-    'رجسٹریشن سند',
-    'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
-    'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=600',
-    '2014-06-12',
-    'REG-TR/2014/8912',
-    true,
-    true,
-    1
-  ),
-  (
-    'Institutional Pan Card & Tax Exemption Verification',
-    'ٹرسٹ پین کارڈ و انکم ٹیکس اندراج کی کاپی',
-    'Income Tax Department PAN identification issued in the registered name of the educational trust.',
-    'انکم ٹیکس ڈپارٹمنٹ کی جانب سے جاری کردہ ٹرسٹ کا تصدیق شدہ مستقل کھاتہ نمبر (PAN)۔',
-    'Tax Identification',
-    'پین کارڈ سند',
-    'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
-    'https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&q=80&w=600',
-    '2015-02-18',
-    'AAATM9821K',
-    true,
-    true,
-    2
-  ),
-  (
-    'Affiliation Certificate with Central Madrasa Board',
-    'مرکزی دینی تعلیمی بورڈ سے الحاق کی سند',
-    'Official certificate of curricular affiliation and standardized examination authorization.',
-    'مرکزی تعلیمی بورڈ کی جانب سے نصابی الحاق اور باضابطہ امتحانات کی باقاعدہ منظوری۔',
-    'Board Affiliation',
-    'الحاق نامہ',
-    'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
-    'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=600',
-    '2017-09-05',
-    'AFF-BRD-5502',
-    true,
-    true,
-    3
-  )
-ON CONFLICT DO NOTHING;
+-- ==============================================================================
+-- 5. Insert Verified Student Statistics (60 Residential Students)
+-- ==============================================================================
+DELETE FROM public.student_statistics;
+
+INSERT INTO public.student_statistics (
+  label_en, label_ur, value, subtext_en, subtext_ur, icon_name, year_or_period, display_order, is_published
+) VALUES (
+  'Residential Students',
+  'مقیم طلبہ (رہائشی)',
+  '60',
+  'Full residential boarding: accommodation, meals, clothing, daily necessities, weekly pocket money, and medical care',
+  'مکمل رہائشی سہولیات: قیام و طعام، لباس، ضروریاتِ زندگی، ہفتہ وار جیب خرچ، دینی و عصری تعلیم اور طبی نگہداشت',
+  'Users',
+  'Current Academic Session',
+  1,
+  true
+);
+
+-- ==============================================================================
+-- 6. Insert Verified Student Activities
+-- ==============================================================================
+DELETE FROM public.student_activities;
+
+INSERT INTO public.student_activities (
+  title_en, title_ur, description_en, description_ur, content_en, content_ur,
+  category_en, category_ur, activity_date, image_url, video_url, display_order, is_published
+) VALUES
+(
+  'Weekly Anjuman (Public Speaking & Naat)',
+  'ہفتہ واری انجمن (تقاریر و نعت خوانی)',
+  'Students recite Naat-e-Pak, deliver speeches, and practise public speaking every Thursday to build confidence, communication skills, and presentation abilities.',
+  'طلبہ ہر جمعرات کو نعت خوانی اور تقاریر کی مشق کرتے ہیں تاکہ ان میں خود اعتمادی اور خطاب کی صلاحیت پیدا ہو۔',
+  'Every Thursday, the Madrasa organizes the Weekly Anjuman. Under the guidance of our Asatizah, students prepare speeches on moral and Islamic topics, recite Naat-e-Pak, and develop their public articulation and stage presence.',
+  'ہر جمعرات کو مدرسہ میں ہفتہ واری بزم کا انعقاد کیا جاتا ہے جس میں اساتذہ کی زیرِ نگرانی طلبہ اخلاقی و دینی موضوعات پر تقاریر پیش کرتے ہیں اور نعت خوانی کا مظاہرہ کرتے ہیں۔',
+  'Tarbiyah & Public Speaking',
+  'تربیت و خطابت',
+  '2026-10-15',
+  '',
+  '',
+  1,
+  true
+),
+(
+  'Dastar Bandi Ceremony',
+  'تقریبِ دستار بندی و اعزاز',
+  'Madrasa ceremony documenting students'' educational milestones and honoring graduates of the Quran memorization program.',
+  'حفظِ قرآن مجید مکمل کرنے والے ہونہار طلبہ کی دستار بندی اور تعلیمی اعزاز کی پروقار تقریب۔',
+  'The Dastar Bandi ceremony is a landmark milestone at Madrasa Afzal-ul-Maarif, where Huffaz who have completed memorizing the Holy Quran are formally crowned with the turban of honor in the presence of distinguished scholars and community elders.',
+  'دستار بندی کی تقریب ادارے کا ایک تاریخی و یادگار سنگ میل ہے جس میں حفظِ کلامِ پاک کی تکمیل کرنے والے حفاظِ کرام کی باوقار دستار بندی علمائے کرام کے مبارک ہاتھوں سے عمل میں لائی جاتی ہے۔',
+  'Milestone & Convocation',
+  'تکمیلِ حفظ و اعزاز',
+  '2026-03-20',
+  '',
+  '',
+  2,
+  true
+),
+(
+  'Outdoor Games & Physical Fitness',
+  'کھیل کود اور جسمانی نشوونما',
+  'Students participate in outdoor games at a nearby playground during their free time to develop physical fitness, teamwork, and confidence.',
+  'طلبہ قریبی میدان میں کھیل کود میں حصہ لیتے ہیں جس سے ان کی جسمانی صحت، باہمی اتحاد اور ذہنی تازگی قائم رہتی ہے۔',
+  'Recognizing that sound health supports sound learning, students are taken to a nearby playground for structured outdoor sports and recreational activities during their scheduled free time.',
+  'جسمانی صحت اور چستی کو تعلیمی یکسوئی کے لیے لازمی سمجھتے ہوئے، فارغ اوقات میں طلبہ کو قریبی گراؤنڈ میں کھیل کود اور تفریح کے باقاعدہ مواقع فراہم کیے جاتے ہیں۔',
+  'Physical Recreation',
+  'صحت و تفریح',
+  '2026-10-10',
+  '',
+  '',
+  3,
+  true
+),
+(
+  'Religious and Academic Education',
+  'دینی و عصری جامع تعلیم',
+  'Ongoing Quran education, Hadith, Masnoon Duas, Islamic upbringing, together with Urdu, Hindi, English, and Mathematics.',
+  'قرآن مجید، احادیث، مسنون دعاؤں اور اخلاقی تربیت کے ساتھ ساتھ اردو، ہندی، انگریزی اور ریاضی کی روزانہ باقاعدہ تدریس۔',
+  'A balanced daily routine encompassing classical Quran recitation, memorization of Masnoon Duas and Hadith without text, ethical tarbiyah, and rigorous instruction in modern languages and mathematics.',
+  'روزمرہ کا ایک منظم تعلیمی سلسلہ جس میں تجوید القرآن، زبانی مسنون دعائیں اور احادیث کے علاوہ اردو، ہندی، انگریزی اور ریاضی کے اسباق شامل ہیں۔',
+  'Core Curriculum',
+  'بنیادی تعلیمی سلسلہ',
+  '2026-10-01',
+  '',
+  '',
+  4,
+  true
+);
+
+-- ==============================================================================
+-- 7. Insert Unpublished Legal Document Draft Reference
+-- ==============================================================================
+DELETE FROM public.legal_documents;
+
+INSERT INTO public.legal_documents (
+  title_en, title_ur, description_en, description_ur, category_en, category_ur,
+  file_url, thumbnail_url, issue_date, document_number, is_public, is_published, display_order
+) VALUES (
+  'Trust Registration (Ref: E-24389 - Pending Document Verification)',
+  'ٹرسٹ رجسٹریشن (حوالہ: E-24389 - زیرِ تصدیق)',
+  'Business card reference registration number E-24389. Maintained in administrative records pending confirmation against official certificate.',
+  'بزنس کارڈ پر درج رجسٹریشن نمبر E-24389 کا حوالہ۔ اصل سرکاری سرٹیفکیٹ کی تصدیق تک دفتری ریکارڈ میں محفوظ۔',
+  'Registration Reference',
+  'رجسٹریشن حوالہ',
+  '',
+  '',
+  'Unconfirmed',
+  'E-24389 (Unconfirmed Reference)',
+  false,
+  false,
+  1
+);
