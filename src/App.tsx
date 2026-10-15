@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { HashRouter as Router, Routes, Route, Outlet } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Outlet, useNavigate, useLocation } from 'react-router-dom';
 import { LanguageProvider } from './i18n/LanguageContext';
 import { AuthProvider } from './context/AuthContext';
 import { SiteSettings } from './types';
@@ -49,6 +49,21 @@ const PublicLayout: React.FC<{
   );
 };
 
+// Automatically converts any legacy /#/route URL to clean /route
+const HashRedirect: React.FC = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (window.location.hash && window.location.hash.startsWith('#/')) {
+      const cleanPath = window.location.hash.slice(1);
+      navigate(cleanPath, { replace: true });
+    }
+  }, [location, navigate]);
+
+  return null;
+};
+
 export const App: React.FC = () => {
   const [settings, setSettings] = useState<SiteSettings>(initialSiteSettings);
   const [donateModalOpen, setDonateModalOpen] = useState(false);
@@ -81,6 +96,7 @@ export const App: React.FC = () => {
     <LanguageProvider>
       <AuthProvider>
         <Router>
+          <HashRedirect />
           <Routes>
             {/* Public Pages */}
             <Route
