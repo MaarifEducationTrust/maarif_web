@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://madrasa.org/</loc>
+    <loc>https://afzalulmaarifeducation.org/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://madrasa.org/#/programs</loc>
+    <loc>https://afzalulmaarifeducation.org/#/programs</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://madrasa.org/#/needs</loc>
+    <loc>https://afzalulmaarifeducation.org/#/needs</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://madrasa.org/#/students</loc>
+    <loc>https://afzalulmaarifeducation.org/#/students</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://madrasa.org/#/documents</loc>
+    <loc>https://afzalulmaarifeducation.org/#/documents</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
