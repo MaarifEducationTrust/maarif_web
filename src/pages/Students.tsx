@@ -89,7 +89,7 @@ export const Students: React.FC = () => {
             </p>
           </div>
 
-          <div className="max-w-md mx-auto">
+          <div className={`mx-auto ${statistics.length === 1 ? 'max-w-md' : 'grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-6xl'}`}>
             {statistics.map((stat) => {
               const label = getField(stat, 'label');
               const subtext = getField(stat, 'subtext');

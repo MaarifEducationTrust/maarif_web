@@ -238,12 +238,45 @@ async function runMigration() {
       year_or_period: 'Current Academic Session',
       display_order: 1,
       is_published: true
+    },
+    {
+      label_en: 'Graduated Huffaz',
+      label_ur: 'فارغ التحصیل حفاظِ کرام',
+      value: '100+',
+      subtext_en: 'Completed Hifz-ul-Quran with Tajweed and comprehensive moral tarbiyah',
+      subtext_ur: 'وہ ہونہار طلبہ جنہوں نے تجوید و ترتیل کے ساتھ حفظِ کلامِ پاک مکمل کیا',
+      icon_name: 'Award',
+      year_or_period: 'Alumni Milestone',
+      display_order: 2,
+      is_published: true
+    },
+    {
+      label_en: 'Free Food and Boarding',
+      label_ur: 'مفت طعام و قیام',
+      value: '100%',
+      subtext_en: 'All meals, accommodation, clothing, and care provided completely free of cost',
+      subtext_ur: 'تمام مقیم طلبہ کے لیے معیاری خوراک، رہائش، لباس اور ضروریات بالکل مفت',
+      icon_name: 'HeartHandshake',
+      year_or_period: 'Welfare Commitment',
+      display_order: 3,
+      is_published: true
+    },
+    {
+      label_en: 'Dedicated Asatizah (Faculty)',
+      label_ur: 'مخلص اساتذہ و معلمین',
+      value: '10',
+      subtext_en: 'Qualified Huffaz, Islamic scholars, and academic teachers mentoring students daily',
+      subtext_ur: 'باصلاحیت حفاظ، علمائے کرام اور عصری مضامین کے اساتذہ',
+      icon_name: 'GraduationCap',
+      year_or_period: 'Academic Staff',
+      display_order: 4,
+      is_published: true
     }
   ];
 
   const { error: insertStatError } = await supabase.from('student_statistics').insert(statsData);
   if (insertStatError) throw new Error('Failed to insert statistics: ' + insertStatError.message);
-  console.log('✅ student_statistics updated successfully (60 residential students confirmed).');
+  console.log('✅ student_statistics updated successfully (4 verified metrics).');
 
   // 5. Replace Student Activities
   console.log('5. Updating student_activities...');

@@ -290,13 +290,14 @@ INSERT INTO public.problems (
 );
 
 -- ==============================================================================
--- 5. Insert Verified Student Statistics (60 Residential Students)
+-- 5. Insert Verified Student Statistics
 -- ==============================================================================
 DELETE FROM public.student_statistics;
 
 INSERT INTO public.student_statistics (
   label_en, label_ur, value, subtext_en, subtext_ur, icon_name, year_or_period, display_order, is_published
-) VALUES (
+) VALUES 
+(
   'Residential Students',
   'مقیم طلبہ (رہائشی)',
   '60',
@@ -305,6 +306,39 @@ INSERT INTO public.student_statistics (
   'Users',
   'Current Academic Session',
   1,
+  true
+),
+(
+  'Graduated Huffaz',
+  'فارغ التحصیل حفاظِ کرام',
+  '100+',
+  'Completed Hifz-ul-Quran with Tajweed and comprehensive moral tarbiyah',
+  'وہ ہونہار طلبہ جنہوں نے تجوید و ترتیل کے ساتھ حفظِ کلامِ پاک مکمل کیا',
+  'Award',
+  'Alumni Milestone',
+  2,
+  true
+),
+(
+  'Free Food and Boarding',
+  'مفت طعام و قیام',
+  '100%',
+  'All meals, accommodation, clothing, and care provided completely free of cost',
+  'تمام مقیم طلبہ کے لیے معیاری خوراک، رہائش، لباس اور ضروریات بالکل مفت',
+  'HeartHandshake',
+  'Welfare Commitment',
+  3,
+  true
+),
+(
+  'Dedicated Asatizah (Faculty)',
+  'مخلص اساتذہ و معلمین',
+  '10',
+  'Qualified Huffaz, Islamic scholars, and academic teachers mentoring students daily',
+  'باصلاحیت حفاظ، علمائے کرام اور عصری مضامین کے اساتذہ',
+  'GraduationCap',
+  'Academic Staff',
+  4,
   true
 );
 
